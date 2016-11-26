@@ -10,11 +10,12 @@ body {
   padding: 0;
 }
 
-nav {
+nav, .bigCard {
   background: #fff;
   box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
   padding: 5px;
-  width: 100%;
+  width: 98%;
+  margin: 1%;
 }
 
 .card {
@@ -28,27 +29,46 @@ nav {
 }
 
 .progressCard {
-	width: 330px;
+  width: 98%;
+  margin: 2% 1%;
 }
 
 p {
-	margin:0;
+  margin:0;
 }
 
 .container {
+	overflow:hidden;
+	width: 98%;
+    margin: 0 auto;
+}
+
+.containerInfo {
 	overflow:hidden;
 	width: 360px;
     margin: 0 auto;
 }
 
+#myProgress {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+}
+#myBar {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background-color: green;
+}
 
 
 /* form starting stylings ------------------------------- */
-.group 			  { 
+.group {
   position:relative; 
   margin-bottom:45px; 
 }
-input[type='text'], input[type='number'] 				{
+input[type='text'], input[type='number'] {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -73,7 +93,7 @@ input[type='text']:focus, input[type='number']:focus { outline:none; }
 }
 
 /* active state */
-input:focus ~ .material_label, input:valid ~ .material_label 		{
+input:focus ~ .material_label, input:valid ~ .material_label {
   top:-20px;
   font-size:14px;
   color:#27ae60;

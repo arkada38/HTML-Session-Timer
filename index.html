@@ -19,21 +19,29 @@
 	<nav>
 		<p>Session timer</p>
 	</nav>
-	<div class="container">
-		<div class="card">
-			<p>Session</p>
-			<p><b>1 of 10</b></p>
-		</div>
-		<div class="card">
-			<p>Period</p>
-			<p><b>1 of 8</b></p>
-		</div>
-	</div>
 	
-	<div class="container">
-		<div class="card progressCard">
-			<progress max="100" value="80"></progress>
+	<div class="bigCard">
+		<div class="containerInfo">
+			<div class="card">
+				<p>Session</p>
+				<b><output id="sessionStep"></output></b>
+			</div>
+			<div class="card">
+				<p>Period</p>
+				<p><b>
+					<output id="periodStep"></output>
+				</b></p>
+			</div>
 		</div>
-	</div>
+		
+		<div class="container">
+			<div class="card progressCard">
+				<output id="condition"></output>
+				<div id="myProgress">
+				  <div id="myBar"></div>
+				</div>
+			</div>
+		</div>
+	</bigCard>
 </body>
 </html>
