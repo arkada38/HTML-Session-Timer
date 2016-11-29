@@ -6,16 +6,27 @@
 
 	<title>Session timer</title>
 	<meta name="description" content="Timer with sessions and periods">
-
+	
+	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="manifest" href="manifest.json">
 	
 	<link rel="icon" href="Assets/icon.png">
 	<link rel="apple-touch-icon-precomposed" href="Assets/apple-touch-icon-precomposed.png" />
 	
+	<link rel="icon" sizes="192x192" href="Assets/HTML5_Badge_192.png">
+	<link rel="icon" sizes="128x128" href="Assets/HTML5_Badge_128.png">
+	
 	<link rel="apple-touch-icon" href="Assets/HTML5_Badge_64.png" />
 	<link rel="apple-touch-icon-precomposed" href="Assets/HTML5_Badge_64.png" />
+	
+	<link rel="apple-touch-icon" href="Assets/HTML5_Badge_128.png" />
+	<link rel="apple-touch-icon-precomposed" href="Assets/HTML5_Badge_128.png" />
+	
+	<link rel="apple-touch-icon" href="Assets/HTML5_Badge_192.png" />
+	<link rel="apple-touch-icon-precomposed" href="Assets/HTML5_Badge_192.png" />
 	
 	<link rel="apple-touch-icon" href="Assets/HTML5_Badge_256.png" />
 	<link rel="apple-touch-icon-precomposed" href="Assets/HTML5_Badge_256.png" />
@@ -43,7 +54,7 @@
 		
 		<div class="container">
 			<div class="card progressCard">
-				<output id="condition">...</output>
+				<output id="status">...</output>
 				<div id="myProgress">
 				  <div id="myBar"></div>
 				</div>
