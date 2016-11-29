@@ -7,7 +7,18 @@
 	<title>Session timer</title>
 	<meta name="description" content="Timer with sessions and periods">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	
+	<link rel="icon" href="Assets/icon.png">
+	<link rel="apple-touch-icon-precomposed" href="Assets/apple-touch-icon-precomposed.png" />
+	
+	<link rel="apple-touch-icon" href="Assets/HTML5_Badge_64.png" />
+	<link rel="apple-touch-icon-precomposed" href="Assets/HTML5_Badge_64.png" />
+	
+	<link rel="apple-touch-icon" href="Assets/HTML5_Badge_256.png" />
+	<link rel="apple-touch-icon-precomposed" href="Assets/HTML5_Badge_256.png" />
 
 	<link rel="stylesheet" href="css/styles.css">
 	
@@ -16,32 +27,40 @@
 </head>
 
 <body>
-	<nav>
-		<p>Session timer</p>
-	</nav>
-	
 	<div class="bigCard">
 		<div class="containerInfo">
 			<div class="card">
 				<p>Session</p>
-				<b><output id="sessionStep"></output></b>
+				<b><output id="sessionStep">1</output></b>
 			</div>
 			<div class="card">
 				<p>Period</p>
 				<p><b>
-					<output id="periodStep"></output>
+					<output id="periodStep">1</output>
 				</b></p>
 			</div>
 		</div>
 		
 		<div class="container">
 			<div class="card progressCard">
-				<output id="condition"></output>
+				<output id="condition">...</output>
 				<div id="myProgress">
 				  <div id="myBar"></div>
 				</div>
 			</div>
 		</div>
+
+		<button class="btn" type="button" id="start_button"><span><b>
+			<output id="start_button_value">Start</output>
+		</b></span></button>
+
+		<button class="btn" type="button" id="pause_button"><span><b>
+			<output id="pause_button_value">Pause</output>
+		</b></span></button>
+
+		<button class="btn" type="button" id="stop_button"><span><b>
+			<output id="stop_button_value">Stop</output>
+		</b></span></button>
 	</bigCard>
 </body>
 </html>

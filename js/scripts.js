@@ -1,5 +1,9 @@
 "use strict";
 
+var width = 0;
+var actionStatus = "stoped";
+var tid = 0;
+
 var numberOfSessions = 10;
 var numberOfPeriods = 8;
 
@@ -12,21 +16,44 @@ var continuityOfPeriodRelaxing = 10;
 
 $(function() {
 
-	startTimer();
+	$("#start_button").on("click", function () {
+        if (actionStatus != "started") {
+			actionStatus = "started";
+			runTimer();
+		}
+    });
+
+	$("#pause_button").on("click", function () {
+        if (actionStatus != "paused") {
+			actionStatus = "paused";
+			clearInterval(tid);
+		}
+    });
+
+	$("#stop_button").on("click", function () {
+        if (actionStatus != "stoped") {
+			actionStatus = "stoped";
+			currentSession = 1;
+			currentPeriod = 1;
+			clearInterval(tid);
+			document.getElementById("status").value = "Stoped";
+		}
+    });
 
 });
 
-function startTimer() { // to be called when you want to start the timer
+function runTimer() { // to be called when you want to start the timer
 	var elem = document.getElementById("myBar");
-	var condition = document.getElementById("condition");
-    var width = 0;
-    var tid = setInterval(frame, 10); //100 calls per second
+	var status = document.getElementById("status");
+    width = 0;
+
+    tid = setInterval(frame, 10); //100 calls per second
 	var time = continuityOfActivity;
 	
 	var sessionOutput = document.getElementById("sessionStep");
 	var periodOutput = document.getElementById("periodStep");
 	
-	condition.value = "Activity";
+	status.value = "Activity";
 	sessionOutput.value = currentSession + " of " + numberOfSessions;
 	periodOutput.value = currentPeriod + " of " + numberOfPeriods;
 
@@ -49,20 +76,20 @@ function startTimer() { // to be called when you want to start the timer
 				time = continuityOfActivity;
 				elem.style.backgroundColor = "green";
 				
-				condition.value = "Activity";
+				status.value = "Activity";
 			}
 			else {
 				if (currentPeriod < numberOfPeriods) {
 					time = continuityOfPeriodRelaxing;
 					elem.style.backgroundColor = "yellow";
 				
-					condition.value = "Period of relaxing";
+					status.value = "Period of relaxing";
 				}
 				else {
 					time = continuityOfSessionRelaxing;
 					elem.style.backgroundColor = "red";
 				
-					condition.value = "Session of relaxing";
+					status.value = "Session of relaxing";
 				}
 			}
 			
@@ -73,8 +100,4 @@ function startTimer() { // to be called when you want to start the timer
 			elem.style.width = width + '%'; 
 		}
 	}
-}
-
-function abortTimer() { // to be called when you want to stop the timer
-  clearInterval(tid);
 }
